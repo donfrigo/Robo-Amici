@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "https://donfrigo.github.io/Robo-Amici",
   "dependencies": {
-    "gh-pages": "^2.0.0",
+    "gh-pages": "^1.2.0",
     "react": "^16.5.0",
     "react-dom": "^16.5.0",
     "react-logger": "^1.1.0",
