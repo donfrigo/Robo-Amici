@@ -1,0 +1,60 @@
+'use strict';var _jsxFileName = '/home/jani/Projects/robofriends/src/components/MainPage.test.js';var _enzyme = require('enzyme');
+var _react = require('react');var _react2 = _interopRequireDefault(_react);
+var _MainPage = require('./MainPage');var _MainPage2 = _interopRequireDefault(_MainPage);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+let wrapper;
+
+beforeEach(() => {
+    const mockProps = {
+        onRequestRobots: jest.fn(),
+        robots: [],
+        searchField: '',
+        isPending: false };
+
+
+    wrapper = (0, _enzyme.shallow)(_react2.default.createElement(_MainPage2.default, Object.assign({}, mockProps, { __source: { fileName: _jsxFileName, lineNumber: 15 }, __self: undefined })));
+});
+
+it('renders MainPage', () => {
+    expect(wrapper).toMatchSnapshot();
+});
+
+it('filters robots correctly', () => {
+    const mockProps2 = {
+        onRequestRobots: jest.fn(),
+        robots: [{
+            id: 3,
+            name: 'Johnny',
+            email: 'john@john.com' }],
+
+
+        searchField: 'john',
+        isPending: false };
+
+
+    const wrapper2 = (0, _enzyme.shallow)(_react2.default.createElement(_MainPage2.default, Object.assign({}, mockProps2, { __source: { fileName: _jsxFileName, lineNumber: 35 }, __self: undefined })));
+
+    expect(wrapper2.instance().filterRobots()).toEqual([{
+        id: 3,
+        name: 'Johnny',
+        email: 'john@john.com' }]);
+
+
+});
+
+it('filters robots correctly 2', () => {
+    const mockProps3 = {
+        onRequestRobots: jest.fn(),
+        robots: [{
+            id: 3,
+            name: 'Johnny',
+            email: 'john@john.com' }],
+
+
+        searchField: 'a',
+        isPending: false };
+
+
+    const wrapper3 = (0, _enzyme.shallow)(_react2.default.createElement(_MainPage2.default, Object.assign({}, mockProps3, { __source: { fileName: _jsxFileName, lineNumber: 58 }, __self: undefined })));
+    expect(wrapper3.instance().filterRobots()).toEqual([]);
+});

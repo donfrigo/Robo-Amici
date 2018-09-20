@@ -1,0 +1,2 @@
+"use strict";Object.defineProperty(exports, "__esModule", { value: true });const apiCall = exports.apiCall = link =>
+fetch(link).then(response => response.json());

@@ -1,0 +1,11 @@
+'use strict';Object.defineProperty(exports, "__esModule", { value: true });var _jsxFileName = '/home/jani/Projects/robofriends/src/components/Scroll.js';var _react = require('react');var _react2 = _interopRequireDefault(_react);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+const Scroll = props => {
+    return (
+        _react2.default.createElement('div', { style: { overflowY: 'scroll', border: '5px solid black', height: '800px' }, __source: { fileName: _jsxFileName, lineNumber: 5 }, __self: undefined },
+            props.children));
+
+
+};exports.default =
+
+Scroll;

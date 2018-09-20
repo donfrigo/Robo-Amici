@@ -5,7 +5,6 @@ import {
     REQUEST_ROBOTS_SUCCESS
 } from "./constants";
 
-
 const initialStateSearch = {
     searchField: ''
 }

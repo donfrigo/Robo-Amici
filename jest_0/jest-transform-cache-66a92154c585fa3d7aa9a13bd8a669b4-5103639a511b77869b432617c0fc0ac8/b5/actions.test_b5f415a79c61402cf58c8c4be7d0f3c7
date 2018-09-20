@@ -1,0 +1,36 @@
+'use strict';var _actions = require('./actions');var actions = _interopRequireWildcard(_actions);
+var _constants = require('./constants');
+
+
+
+
+
+
+var _reduxMockStore = require('redux-mock-store');var _reduxMockStore2 = _interopRequireDefault(_reduxMockStore);
+var _reduxThunk = require('redux-thunk');var _reduxThunk2 = _interopRequireDefault(_reduxThunk);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _interopRequireWildcard(obj) {if (obj && obj.__esModule) {return obj;} else {var newObj = {};if (obj != null) {for (var key in obj) {if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key];}}newObj.default = obj;return newObj;}}
+
+const mockStore = (0, _reduxMockStore2.default)([_reduxThunk2.default]);
+
+describe('actions', () => {
+
+    it('should create an action to search robots', () => {
+        const text = 'woo';
+        const expectedAction = {
+            type: _constants.CHANGE_SEARCHFIELD,
+            payload: text };
+
+        expect(actions.setSearchField(text)).toEqual(expectedAction);
+    });
+
+    it('handles requesting robots API', () => {
+        const store = mockStore();
+        store.dispatch(actions.requestRobots());
+        const action = store.getActions();
+
+        const expectedAction = {
+            type: _constants.REQUEST_ROBOTS_PENDING };
+
+        expect(action[1]).toEqual(expectedAction);
+    });
+
+});

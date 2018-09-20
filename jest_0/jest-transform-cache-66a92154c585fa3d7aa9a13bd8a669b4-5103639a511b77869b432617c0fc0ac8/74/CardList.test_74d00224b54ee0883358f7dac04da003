@@ -1,0 +1,16 @@
+'use strict';var _jsxFileName = '/home/jani/Projects/robofriends/src/components/CardList.test.js';var _enzyme = require('enzyme');
+var _react = require('react');var _react2 = _interopRequireDefault(_react);
+var _CardList = require('./CardList');var _CardList2 = _interopRequireDefault(_CardList);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+it('expect to render CardList component', () => {
+    const mockRobots = [
+    {
+        id: 1,
+        name: 'John Wick',
+        username: 'johnny',
+        email: 'johnny@gmail.com' }];
+
+
+
+    expect((0, _enzyme.shallow)(_react2.default.createElement(_CardList2.default, { robots: mockRobots, __source: { fileName: _jsxFileName, lineNumber: 15 }, __self: undefined }))).toMatchSnapshot();
+});

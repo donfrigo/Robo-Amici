@@ -1,0 +1,38 @@
+'use strict';Object.defineProperty(exports, "__esModule", { value: true });var _jsxFileName = '/home/jani/Projects/robofriends/src/components/CounterButton.js';var _react = require('react');var _react2 = _interopRequireDefault(_react);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+class CounterButton extends _react.Component {
+    constructor() {
+        super();this.
+
+
+
+
+
+
+
+
+
+
+
+
+
+        updateCount = () => {
+            // grab current state and return new
+            this.setState(state => {
+                return { count: this.state.count + 1 };
+            });
+        };this.state = { count: 0 };} //when it updates
+    shouldComponentUpdate(nextProps, nextState) {if (this.state.count !== nextState.count) {return true;}return false;}
+    render() {
+        return (
+            _react2.default.createElement('button', {
+                    id: 'counter',
+                    color: this.props.color,
+                    onClick: this.updateCount, __source: { fileName: _jsxFileName, lineNumber: 28 }, __self: this }, 'Count: ',
+                this.state.count));
+
+
+    }}exports.default =
+
+
+CounterButton;

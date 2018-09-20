@@ -1,0 +1,23 @@
+'use strict';var _jsxFileName = '/home/jani/Projects/robofriends/src/components/CounterButton.test.js';var _enzyme = require('enzyme');
+var _react = require('react');var _react2 = _interopRequireDefault(_react);
+var _CounterButton = require('./CounterButton');var _CounterButton2 = _interopRequireDefault(_CounterButton);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+it('renders CounterButton', () => {
+    const mockColor = 'red';
+    expect((0, _enzyme.shallow)(_react2.default.createElement(_CounterButton2.default, { color: mockColor, __source: { fileName: _jsxFileName, lineNumber: 7 }, __self: undefined }))).toMatchSnapshot();
+});
+
+it('correctly increments the counter', () => {
+    const mockColor = 'red';
+    const wrapper = (0, _enzyme.shallow)(_react2.default.createElement(_CounterButton2.default, { color: mockColor, __source: { fileName: _jsxFileName, lineNumber: 12 }, __self: undefined }));
+
+    wrapper.find('[id="counter"]').simulate('click');
+    expect(wrapper.state()).toEqual({ count: 1 });
+    wrapper.find('[id="counter"]').simulate('click');
+    wrapper.find('[id="counter"]').simulate('click');
+    wrapper.find('[id="counter"]').simulate('keypress');
+    expect(wrapper.state()).toEqual({ count: 3 });
+    expect(wrapper.props().color).toEqual('red');
+
+
+});

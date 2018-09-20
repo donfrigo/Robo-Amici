@@ -1,0 +1,21 @@
+'use strict';Object.defineProperty(exports, "__esModule", { value: true });var _jsxFileName = '/home/jani/Projects/robofriends/src/components/CardList.js';var _react = require('react');var _react2 = _interopRequireDefault(_react);
+var _Card = require('./Card');var _Card2 = _interopRequireDefault(_Card);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+const CardList = ({ robots }) => {
+
+    const cardsArray = robots.map((user, i) => {
+        return _react2.default.createElement(_Card2.default, { key: i,
+            id: robots[i].id,
+            name: robots[i].name,
+            email: robots[i].email, __source: { fileName: _jsxFileName, lineNumber: 7 }, __self: undefined });
+
+    });
+
+    return (
+        _react2.default.createElement('div', { __source: { fileName: _jsxFileName, lineNumber: 15 }, __self: undefined },
+            cardsArray));
+
+
+};exports.default =
+
+CardList;
