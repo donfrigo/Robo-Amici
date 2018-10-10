@@ -20,7 +20,7 @@ class MainPage extends Component{
     };
 
     render(){
-        const { searchField, onSearchChange, robots, isPending } = this.props;
+        const { searchField, onSearchChange, robots } = this.props;
 
         return !robots.length ?
             <h1 className='tc'>Loading</h1> :
